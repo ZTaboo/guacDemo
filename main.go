@@ -57,14 +57,14 @@ func initGuac(c *gin.Context) {
 	defer ws.Close()
 	var args = GuacArgs{
 		GuacadAddr:    "localhost:4822",
-		AssetProtocol: "vnc",
-		AssetHost:     "192.168.1.124",
-		AssetPort:     "5902",
+		AssetProtocol: "ssh",
+		AssetHost:     "192.168.152.129",
+		AssetPort:     "22",
 		AssetUser:     "zero",
-		AssetPassword: "012359clown",
-		ScreenWidth:   1920,
-		ScreenHeight:  1080,
-		ScreenDpi:     800,
+		AssetPassword: "zero",
+		ScreenWidth:   1024,
+		ScreenHeight:  760,
+		ScreenDpi:     100,
 	}
 	uid := ""
 	tunnel, err := guac.NewGuacamoleTunnel(args.GuacadAddr, args.AssetProtocol, args.AssetHost, args.AssetPort, args.AssetUser, args.AssetPassword, uid, args.ScreenWidth, args.ScreenHeight, args.ScreenDpi)
