@@ -22,6 +22,7 @@ function App() {
             client.sendMouseState(e.state, true);
         });
 
+        // 这里必须传递0 or 1,否则无法捕获键盘事件
         keyBoard.onkeydown = function (e) {
             console.log(e)
             client.sendKeyEvent(1, e)
